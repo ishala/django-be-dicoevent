@@ -32,8 +32,6 @@ services:
     image: postgres:15
     container_name: postgres
     environment:
-      POSTGRES_DB: moviego
-      POSTGRES_USER: developer
       POSTGRES_PASSWORD: mysecret
     ports:
       - "5432:5432"

@@ -19,7 +19,7 @@ class UserListCreateView(APIView):
     def get(self, request):
         if not IsAdminOrSuperUser().has_permission(request, self):
             return Response(
-                {"message": f"An ordinary User doesn't have any access to get this info."},
+                {"message": "An ordinary User doesn't have any access to get this info."},
                 status=status.HTTP_403_FORBIDDEN
             )
         users = User.objects.all().order_by('username')[:10]

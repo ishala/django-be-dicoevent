@@ -5,10 +5,12 @@ from django.http import Http404
 from .models import Payment, Registration
 from .serializers import PaymentSerializer, RegistrationSerializer
 from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
 from core.permissions import IsAdminOrSuperUser
 
 class PaymentListCreateView(APIView):
     permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
 
     def get(self, request):
         if IsAdminOrSuperUser().has_permission(request, self):
@@ -31,6 +33,7 @@ class PaymentListCreateView(APIView):
 
 class PaymentDetailView(APIView):
     permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
 
     def get_object(self, pk):
         try:
@@ -64,6 +67,7 @@ class PaymentDetailView(APIView):
 
 
 class RegistrationListCreateView(APIView):
+    authentication_classes = [JWTAuthentication]
     def get_permissions(self):
         if self.request.method == 'POST':
             return [IsAuthenticated()]  # Semua user bisa mendaftar
@@ -91,6 +95,7 @@ class RegistrationListCreateView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class RegistrationDetailView(APIView):
+    authentication_classes = [JWTAuthentication]
     def get_permissions(self):
         if self.request.method == 'GET':
             return [IsAuthenticated()]  # Semua user bisa lihat detail miliknya

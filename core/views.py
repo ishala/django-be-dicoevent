@@ -10,11 +10,18 @@ from django.shortcuts import get_object_or_404
 
 from .models import User
 from .serializers import UserSerializer, GroupSerializer
-from .permissions import IsAdminOrSuperUser  # Pastikan permission ini ada
+from .permissions import IsAdminOrSuperUser, IsSuperUser
 
 # --- User Views ---
-class UserListCreateView(APIView):
+class UserListCreateView(APIView):    
+    authentication_classes = [JWTAuthentication]
+
     def get(self, request):
+        if not IsAdminOrSuperUser().has_permission(request, self):
+            return Response(
+                {"message": f"An ordinary User doesn't have any access to get this info."},
+                status=status.HTTP_403_FORBIDDEN
+            )
         users = User.objects.all().order_by('username')[:10]
         serializer = UserSerializer(users, many=True)
         return Response({'users': serializer.data})
@@ -28,6 +35,7 @@ class UserListCreateView(APIView):
 
 
 class UserDetailView(APIView):
+    permission_classes = [IsAuthenticated]
     def get_object(self, pk):
         try:
             user = User.objects.get(pk=pk)
@@ -99,7 +107,7 @@ class GroupDetailView(APIView):
 # --- Assign Role ---
 class AssignRoleView(APIView):
     authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated, IsAdminOrSuperUser]
+    permission_classes = [IsAuthenticated, IsSuperUser]
 
     def post(self, request):
         user_id = request.data.get("user_id")

@@ -32,6 +32,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CORS_ALLOWED_ORIGINS = [
+    "https://example.com",
+    "https://sub.example.com",
+    "http://localhost:8080",
+    "http://127.0.0.1:9000",
+]
 
 # Application definition
 
@@ -50,6 +56,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -134,6 +141,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 AUTH_USER_MODEL = 'core.User'
 
 REST_FRAMEWORK = {
@@ -142,8 +150,27 @@ REST_FRAMEWORK = {
     ),
 }
 
-
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(hours=3),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
+
+# Redis
+CACHES = {
+   "default": {
+       "BACKEND": "django.core.cache.backends.redis.RedisCache",
+       "LOCATION": os.getenv('REDIS_HOST'),
+   }
+}
+
+# Celery (RabbitMQ)
+CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL')
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.getenv('MAIL_HOST')
+EMAIL_PORT = os.getenv('MAIL_PORT')
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.getenv('MAIL_USER')
+EMAIL_HOST_PASSWORD = os.getenv('MAIL_PASSWORD')

@@ -20,3 +20,14 @@ class Event(models.Model):
 
     class Meta:
         db_table = 'events'
+
+class EventPoster(models.Model):
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    image = models.ImageField()
+
+    def __str__(self):
+        return self.event.name
+
+    class Meta:
+        db_table = 'event_posters'

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from rest_framework.reverse import reverse
-from .models import Event
+from .models import Event, EventPoster
 from core.models import User
 
 class EventSerializer(serializers.HyperlinkedModelSerializer):
@@ -41,3 +41,14 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
                 "types": ["application/json"]
             },
         ]
+
+class EventPosterSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = EventPoster
+        fields = ['id', 'event', 'image']
+    
+    def validate_image(self, value):
+        max_size = 500 * 1024
+        if value.size > max_size:
+            raise serializers.ValidationError("Image size should not exceed 500KB.")
+        return value

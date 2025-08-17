@@ -7,9 +7,11 @@ from .models import Ticket
 from .serializers import TicketSerializer
 from core.permissions import IsAdminOrSuperUser
 from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
 
 # Create your views here.
 class TicketListCreateView(APIView):
+    authentication_classes = [JWTAuthentication]
     def get_permissions(self):
         if self.request.method == 'GET':
             return [IsAuthenticated()]  # Semua user bisa GET
@@ -30,6 +32,7 @@ class TicketListCreateView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class TicketDetailView(APIView):
+    authentication_classes = [JWTAuthentication]
     def get_permissions(self):
         if self.request.method == 'GET':
             return [IsAuthenticated()]  # Semua user bisa GET detail

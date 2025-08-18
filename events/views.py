@@ -13,8 +13,8 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from core.permissions import (
     IsOwnerOrAdminOrSuperUser,
-    IsAdminOrSuperUser
 )
+from django.shortcuts import get_object_or_404
 
 def get_minio_client():
     return Minio(
@@ -128,3 +128,23 @@ class EventPosterView(APIView):
 
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class EventPosterDetailView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, pk):
+        event = get_object_or_404(Event, pk=pk)
+        images = event.eventposter_set.all()
+
+        serialized_images = []
+        for image in images:
+            client = get_minio_client()
+            presigned_url = client.presigned_get_object(
+                bucket_name,
+                image.image.name,
+                response_headers={"response-content-type": "image/jpeg"}
+            )
+            serialized_images.append({"id": image.id, "url": presigned_url})
+        
+        return Response(serialized_images)

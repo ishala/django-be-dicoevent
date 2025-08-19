@@ -2,11 +2,6 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.http import Http404
-import tempfile
-import os
-import uuid
-from minio import Minio
-from .models import Event
 from .serializers import EventSerializer, EventPosterSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.parsers import MultiPartParser, FormParser
@@ -15,6 +10,13 @@ from core.permissions import (
     IsOwnerOrAdminOrSuperUser,
 )
 from django.shortcuts import get_object_or_404
+from django.core.cache import cache
+import tempfile
+import json
+import os
+import uuid
+from minio import Minio
+from .models import Event
 
 def get_minio_client():
     return Minio(
@@ -26,6 +28,9 @@ def get_minio_client():
 
 bucket_name = os.getenv('MINIO_BUCKET_NAME')
 
+CACHE_KEY_LIST = "event_list"
+CACHE_KEY_DETAIL = "event_detail_{}"
+
 class EventListCreateView(APIView):
     authentication_classes = [JWTAuthentication]
 
@@ -36,9 +41,26 @@ class EventListCreateView(APIView):
         return [IsAuthenticated()]
 
     def get(self, request):
-        events = Event.objects.all().order_by('name')[:10]
-        serializer = EventSerializer(events, many=True)
-        return Response({'events': serializer.data})
+        events = cache.get(CACHE_KEY_LIST)
+        if not events:
+            print('Data retrieved from database...')
+            events = Event.objects.all().order_by('name')[:10]
+            cache.get(CACHE_KEY_LIST)
+            serializer = EventSerializer(events, many=True)
+
+            events_data = json.dumps(serializer.data, default=str)
+            cache.set(CACHE_KEY_LIST, events_data, timeout=3600)
+            events = events_data
+            data_source = 'database'
+        else:
+            print('Data retrieved from cache...')
+            data_source = 'cache'
+
+        response = Response({
+            "events": json.loads(events)  
+        })
+        response['X-Data-Source'] = data_source
+        return response
 
     def post(self, request):
         serializer = EventSerializer(data=request.data)
@@ -49,6 +71,7 @@ class EventListCreateView(APIView):
                     status=status.HTTP_403_FORBIDDEN
                 )
             serializer.save()
+            cache.delete(CACHE_KEY_LIST)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -69,23 +92,49 @@ class EventDetailView(APIView):
             raise Http404
 
     def get(self, request, pk):
-        event = self.get_object(pk)
-        serializer = EventSerializer(event)
-        return Response(serializer.data)
+        cache_key = CACHE_KEY_DETAIL.format(pk)
+        event_data = cache.get(cache_key)
+
+        if not event_data:
+            print("Data retrieved from database...")
+            event = self.get_object(pk)
+            serializer = EventSerializer(event)
+            
+            # simpan ke cache
+            event_data = json.dumps(serializer.data, default=str)
+            cache.set(cache_key, event_data, timeout=3600)  # 1 jam
+            data_source = 'database'
+        else:
+            print("Data retrieved from cache...")
+            data_source = 'cache'
+
+        response = Response(json.loads(event_data))
+        response['X-Data-Source'] = data_source
+        return response
 
     def put(self, request, pk):
         event = self.get_object(pk)
         self.check_object_permissions(request, event) 
         serializer = EventSerializer(event, data=request.data, partial=True)
+
         if serializer.is_valid():
             serializer.save()
+            cache.set(
+                CACHE_KEY_DETAIL.format(pk),
+                json.dumps(serializer.data, default=str),
+                timeout=3600
+            )
+
             return Response(serializer.data)
+
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, pk):
         event = self.get_object(pk)
         self.check_object_permissions(request, event)
         event.delete()
+
+        cache.delete(CACHE_KEY_DETAIL.format(pk))
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class EventPosterView(APIView):

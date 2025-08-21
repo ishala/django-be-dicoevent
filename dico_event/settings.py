@@ -163,11 +163,12 @@ CACHES = {
    }
 }
 
-# Celery (RabbitMQ)
+# Celery
 CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL')
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 
+# Mailtrap Settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = os.getenv('MAIL_HOST')
 EMAIL_PORT = os.getenv('MAIL_PORT')

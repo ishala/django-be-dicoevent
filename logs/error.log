@@ -1,0 +1,10 @@
+2025-08-21 20:03:59.362 | ERROR    | events.views:post:179 - Poster upload validation failed: {'image': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+2025-08-21 20:04:03.751 | ERROR    | events.views:post:179 - Poster upload validation failed: {'image': [ErrorDetail(string='Image size should not exceed 500KB.', code='invalid')]}
+2025-08-21 20:11:06.737 | ERROR    | events.views:post:74 - Event creation failed: {'organizer_id': [ErrorDetail(string='“null” is not a valid UUID.', code='invalid')]}
+2025-08-21 20:11:06.846 | ERROR    | events.views:post:74 - Event creation failed: {'organizer_id': [ErrorDetail(string='“null” is not a valid UUID.', code='invalid')]}
+2025-08-21 20:11:06.957 | ERROR    | events.views:get_object:92 - Event with id 080a1975-4f5a-48b8-94d0-04cfb4720942 not found
+2025-08-21 20:11:07.079 | ERROR    | events.views:get_object:92 - Event with id 7a087ec9-1136-44df-8930-fa0e36bd8875 not found
+2025-08-21 20:11:07.165 | ERROR    | events.views:get_object:92 - Event with id 080a1975-4f5a-48b8-94d0-04cfb4720942 not found
+2025-08-21 20:11:07.274 | ERROR    | events.views:get_object:92 - Event with id 7a087ec9-1136-44df-8930-fa0e36bd8875 not found
+2025-08-21 20:15:55.872 | ERROR    | events.views:post:179 - Poster upload validation failed: {'image': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+2025-08-21 20:15:59.181 | ERROR    | events.views:post:179 - Poster upload validation failed: {'image': [ErrorDetail(string='Image size should not exceed 500KB.', code='invalid')]}

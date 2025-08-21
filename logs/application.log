@@ -1,0 +1,99 @@
+2025-08-21 20:03:34.344 | INFO     | events.views:post:72 - Event 9c255cf5-20c9-4900-90f9-1aca1ff14708 created by Aras
+2025-08-21 20:03:34.442 | INFO     | events.views:get:44 - Event list retrieved from database
+2025-08-21 20:03:34.560 | INFO     | events.views:get:100 - Event 9c255cf5-20c9-4900-90f9-1aca1ff14708 retrieved from database
+2025-08-21 20:03:34.684 | INFO     | events.views:put:127 - Event 9c255cf5-20c9-4900-90f9-1aca1ff14708 updated by Aras
+2025-08-21 20:03:34.798 | INFO     | events.views:delete:138 - Event 9c255cf5-20c9-4900-90f9-1aca1ff14708 deleted by Aras
+2025-08-21 20:03:34.905 | INFO     | events.views:post:72 - Event ee12a800-edbe-4005-b396-8b18b3cd63c6 created by Aras
+2025-08-21 20:03:35.011 | INFO     | tickets.views:post:36 - Ticket 49d1d6e6-6f02-4fc6-90c3-77b9a2be12a0 created by Aras
+2025-08-21 20:03:35.103 | INFO     | tickets.views:get:29 - 1 tickets retrieved by dicoding_1755432461_1755432462_1755432561_1755432562_1755433108_1755445785_1755445786_1755446106_1755446107_1755446432_1755446434_1755570485_1755570486_1755575166_1755575168_1755755677_1755755679_1755773525_1755773526_1755779467_1755779469_1755781411_1755781412
+2025-08-21 20:03:35.216 | INFO     | tickets.views:get:60 - Ticket 49d1d6e6-6f02-4fc6-90c3-77b9a2be12a0 retrieved from database by dicoding_1755432461_1755432462_1755432561_1755432562_1755433108_1755445785_1755445786_1755446106_1755446107_1755446432_1755446434_1755570485_1755570486_1755575166_1755575168_1755755677_1755755679_1755773525_1755773526_1755779467_1755779469_1755781411_1755781412
+2025-08-21 20:03:35.347 | INFO     | tickets.views:put:84 - Ticket 49d1d6e6-6f02-4fc6-90c3-77b9a2be12a0 updated by Aras
+2025-08-21 20:03:35.476 | INFO     | tickets.views:delete:93 - Ticket 49d1d6e6-6f02-4fc6-90c3-77b9a2be12a0 deleted by Aras
+2025-08-21 20:03:35.599 | INFO     | events.views:post:72 - Event 2f75516d-5dbd-4729-b81a-69f2d44d1a1d created by Aras
+2025-08-21 20:03:35.705 | INFO     | tickets.views:post:36 - Ticket 06b7c441-5799-40ce-856d-124821be7c2f created by Aras
+2025-08-21 20:03:35.796 | INFO     | payments.views:post:141 - Registration b4382955-08d0-4282-a195-deb2545859a2 created by Aras
+2025-08-21 20:03:40.053 | INFO     | payments.views:post:149 - Reminder email sent to email_1755781412@gmail.com for registration b4382955-08d0-4282-a195-deb2545859a2
+2025-08-21 20:03:40.138 | INFO     | payments.views:get:125 - Admin Aras retrieved all registrations
+2025-08-21 20:03:40.255 | INFO     | payments.views:get:177 - Registration b4382955-08d0-4282-a195-deb2545859a2 retrieved from database
+2025-08-21 20:03:40.385 | INFO     | payments.views:put:209 - Registration b4382955-08d0-4282-a195-deb2545859a2 updated by Aras
+2025-08-21 20:03:40.498 | INFO     | payments.views:delete:221 - Registration b4382955-08d0-4282-a195-deb2545859a2 deleted by Aras
+2025-08-21 20:03:40.622 | INFO     | events.views:post:72 - Event c1a4b3da-e149-4e53-9f52-9e6efeea46cd created by Aras
+2025-08-21 20:03:40.722 | INFO     | tickets.views:post:36 - Ticket 2e13ca75-f27f-406f-be40-943cbed5865b created by Aras
+2025-08-21 20:03:40.821 | INFO     | payments.views:post:141 - Registration d317f515-ca9a-4cf6-ba52-8c61859c5823 created by Aras
+2025-08-21 20:03:44.909 | INFO     | payments.views:post:149 - Reminder email sent to email_1755781412@gmail.com for registration d317f515-ca9a-4cf6-ba52-8c61859c5823
+2025-08-21 20:03:45.034 | INFO     | payments.views:post:42 - Payment 16325585-cf88-40a6-b3d0-7c67f50d9971 created by Aras
+2025-08-21 20:03:45.156 | INFO     | payments.views:get:26 - Admin Aras retrieved all payments
+2025-08-21 20:03:45.287 | INFO     | payments.views:get:64 - Payment 16325585-cf88-40a6-b3d0-7c67f50d9971 retrieved from database
+2025-08-21 20:03:45.402 | INFO     | payments.views:put:96 - Payment 16325585-cf88-40a6-b3d0-7c67f50d9971 updated by Aras
+2025-08-21 20:03:45.524 | INFO     | tickets.views:delete:93 - Ticket 2e13ca75-f27f-406f-be40-943cbed5865b deleted by Aras
+2025-08-21 20:03:45.635 | INFO     | events.views:get:44 - Event list retrieved from database
+2025-08-21 20:03:47.380 | INFO     | events.views:post:72 - Event 080a1975-4f5a-48b8-94d0-04cfb4720942 created by eo_dicoding
+2025-08-21 20:03:47.492 | INFO     | events.views:post:72 - Event 7a087ec9-1136-44df-8930-fa0e36bd8875 created by other_organizer
+2025-08-21 20:03:47.602 | INFO     | events.views:put:127 - Event 080a1975-4f5a-48b8-94d0-04cfb4720942 updated by eo_dicoding
+2025-08-21 20:03:47.816 | INFO     | events.views:delete:138 - Event 080a1975-4f5a-48b8-94d0-04cfb4720942 deleted by eo_dicoding
+2025-08-21 20:03:55.646 | INFO     | events.views:post:171 - Poster 6ed7ed7e-884e-40e5-831c-34f5f5657791 uploaded by Aras
+2025-08-21 20:04:08.516 | INFO     | events.views:get:201 - Retrieved 1 poster(s) for event c1a4b3da-e149-4e53-9f52-9e6efeea46cd by dicoding_1755432461_1755432462_1755432561_1755432562_1755433108_1755445785_1755445786_1755446106_1755446107_1755446432_1755446434_1755570485_1755570486_1755575166_1755575168_1755755677_1755755679_1755773525_1755773526_1755779467_1755779469_1755781411_1755781412
+2025-08-21 20:10:53.509 | INFO     | events.views:post:72 - Event 53da0831-0d77-4bc4-911b-d354e1b433bf created by Aras
+2025-08-21 20:10:53.616 | INFO     | events.views:get:44 - Event list retrieved from database
+2025-08-21 20:10:53.706 | INFO     | events.views:get:100 - Event 53da0831-0d77-4bc4-911b-d354e1b433bf retrieved from database
+2025-08-21 20:10:53.807 | INFO     | events.views:put:127 - Event 53da0831-0d77-4bc4-911b-d354e1b433bf updated by Aras
+2025-08-21 20:10:53.929 | INFO     | events.views:delete:138 - Event 53da0831-0d77-4bc4-911b-d354e1b433bf deleted by Aras
+2025-08-21 20:10:54.056 | INFO     | events.views:post:72 - Event 3340823c-d648-4893-84e9-2b4ed1783d0a created by Aras
+2025-08-21 20:10:54.119 | INFO     | tickets.views:post:36 - Ticket 6cff797b-ad7c-43d0-b69f-c1790bf085f0 created by Aras
+2025-08-21 20:10:54.227 | INFO     | tickets.views:get:29 - 1 tickets retrieved by dicoding_1755432461_1755432462_1755432561_1755432562_1755433108_1755445785_1755445786_1755446106_1755446107_1755446432_1755446434_1755570485_1755570486_1755575166_1755575168_1755755677_1755755679_1755773525_1755773526_1755779467_1755779469_1755781411_1755781412_1755781850_1755781851
+2025-08-21 20:10:54.345 | INFO     | tickets.views:get:60 - Ticket 6cff797b-ad7c-43d0-b69f-c1790bf085f0 retrieved from database by dicoding_1755432461_1755432462_1755432561_1755432562_1755433108_1755445785_1755445786_1755446106_1755446107_1755446432_1755446434_1755570485_1755570486_1755575166_1755575168_1755755677_1755755679_1755773525_1755773526_1755779467_1755779469_1755781411_1755781412_1755781850_1755781851
+2025-08-21 20:10:54.450 | INFO     | tickets.views:put:84 - Ticket 6cff797b-ad7c-43d0-b69f-c1790bf085f0 updated by Aras
+2025-08-21 20:10:54.574 | INFO     | tickets.views:delete:93 - Ticket 6cff797b-ad7c-43d0-b69f-c1790bf085f0 deleted by Aras
+2025-08-21 20:10:54.697 | INFO     | events.views:post:72 - Event b4e50137-05bc-4b23-8cc8-aa4c38dafefd created by Aras
+2025-08-21 20:10:54.803 | INFO     | tickets.views:post:36 - Ticket 0d397483-affb-4cc5-919a-8c32eca811e3 created by Aras
+2025-08-21 20:10:54.884 | INFO     | payments.views:post:141 - Registration 906b5cce-41d9-4fb9-898c-5232c2a943a6 created by Aras
+2025-08-21 20:10:59.672 | INFO     | payments.views:post:149 - Reminder email sent to email_1755781851@gmail.com for registration 906b5cce-41d9-4fb9-898c-5232c2a943a6
+2025-08-21 20:10:59.764 | INFO     | payments.views:get:125 - Admin Aras retrieved all registrations
+2025-08-21 20:10:59.897 | INFO     | payments.views:get:177 - Registration 906b5cce-41d9-4fb9-898c-5232c2a943a6 retrieved from database
+2025-08-21 20:11:00.006 | INFO     | payments.views:put:209 - Registration 906b5cce-41d9-4fb9-898c-5232c2a943a6 updated by Aras
+2025-08-21 20:11:00.141 | INFO     | payments.views:delete:221 - Registration 906b5cce-41d9-4fb9-898c-5232c2a943a6 deleted by Aras
+2025-08-21 20:11:00.272 | INFO     | events.views:post:72 - Event 406ab3b4-fdc5-462a-b32c-f731d6f62180 created by Aras
+2025-08-21 20:11:00.369 | INFO     | tickets.views:post:36 - Ticket d83b6b58-3288-4502-b43c-3d3136aa1e89 created by Aras
+2025-08-21 20:11:00.452 | INFO     | payments.views:post:141 - Registration 16d246b6-edc8-4af2-80e6-3b84f65b67b3 created by Aras
+2025-08-21 20:11:04.682 | INFO     | payments.views:post:149 - Reminder email sent to email_1755781851@gmail.com for registration 16d246b6-edc8-4af2-80e6-3b84f65b67b3
+2025-08-21 20:11:04.787 | INFO     | payments.views:post:42 - Payment f721fdbf-930a-416b-bed0-69f07ab4c8af created by Aras
+2025-08-21 20:11:04.881 | INFO     | payments.views:get:26 - Admin Aras retrieved all payments
+2025-08-21 20:11:05.002 | INFO     | payments.views:get:64 - Payment f721fdbf-930a-416b-bed0-69f07ab4c8af retrieved from database
+2025-08-21 20:11:05.105 | INFO     | payments.views:put:96 - Payment f721fdbf-930a-416b-bed0-69f07ab4c8af updated by Aras
+2025-08-21 20:11:05.240 | INFO     | tickets.views:delete:93 - Ticket d83b6b58-3288-4502-b43c-3d3136aa1e89 deleted by Aras
+2025-08-21 20:11:05.355 | INFO     | events.views:get:44 - Event list retrieved from database
+2025-08-21 20:14:30.453 | INFO     | events.views:post:72 - Event fb3d6624-72e0-4488-8bab-ecdcc00f1fb1 created by Aras
+2025-08-21 20:14:30.546 | INFO     | events.views:get:44 - Event list retrieved from database
+2025-08-21 20:14:30.656 | INFO     | events.views:get:100 - Event fb3d6624-72e0-4488-8bab-ecdcc00f1fb1 retrieved from database
+2025-08-21 20:14:30.739 | INFO     | events.views:put:127 - Event fb3d6624-72e0-4488-8bab-ecdcc00f1fb1 updated by Aras
+2025-08-21 20:14:30.871 | INFO     | events.views:delete:138 - Event fb3d6624-72e0-4488-8bab-ecdcc00f1fb1 deleted by Aras
+2025-08-21 20:14:30.990 | INFO     | events.views:post:72 - Event ba18818f-b7f5-453a-9a35-78ba805cd14c created by Aras
+2025-08-21 20:14:31.098 | INFO     | tickets.views:post:36 - Ticket 5bb7c736-779b-4048-aaba-cae539a45791 created by Aras
+2025-08-21 20:14:31.201 | INFO     | tickets.views:get:29 - 1 tickets retrieved by dicoding_1755432461_1755432462_1755432561_1755432562_1755433108_1755445785_1755445786_1755446106_1755446107_1755446432_1755446434_1755570485_1755570486_1755575166_1755575168_1755755677_1755782067_1755782068
+2025-08-21 20:14:31.322 | INFO     | tickets.views:get:60 - Ticket 5bb7c736-779b-4048-aaba-cae539a45791 retrieved from database by dicoding_1755432461_1755432462_1755432561_1755432562_1755433108_1755445785_1755445786_1755446106_1755446107_1755446432_1755446434_1755570485_1755570486_1755575166_1755575168_1755755677_1755782067_1755782068
+2025-08-21 20:14:31.446 | INFO     | tickets.views:put:84 - Ticket 5bb7c736-779b-4048-aaba-cae539a45791 updated by Aras
+2025-08-21 20:14:31.563 | INFO     | tickets.views:delete:93 - Ticket 5bb7c736-779b-4048-aaba-cae539a45791 deleted by Aras
+2025-08-21 20:14:31.680 | INFO     | events.views:post:72 - Event 4e126632-7937-4cd8-b927-b38535a2b95a created by Aras
+2025-08-21 20:14:31.773 | INFO     | tickets.views:post:36 - Ticket a9ed8892-b83f-4d5a-8faf-21ecfd64485e created by Aras
+2025-08-21 20:14:31.874 | INFO     | payments.views:post:141 - Registration 5f22adcf-134d-42ac-90c3-e31f7d117bd3 created by Aras
+2025-08-21 20:14:36.019 | INFO     | payments.views:post:149 - Reminder email sent to email_1755782068@gmail.com for registration 5f22adcf-134d-42ac-90c3-e31f7d117bd3
+2025-08-21 20:14:36.128 | INFO     | payments.views:get:125 - Admin Aras retrieved all registrations
+2025-08-21 20:14:36.232 | INFO     | payments.views:get:177 - Registration 5f22adcf-134d-42ac-90c3-e31f7d117bd3 retrieved from database
+2025-08-21 20:14:36.366 | INFO     | payments.views:put:209 - Registration 5f22adcf-134d-42ac-90c3-e31f7d117bd3 updated by Aras
+2025-08-21 20:14:36.484 | INFO     | payments.views:delete:221 - Registration 5f22adcf-134d-42ac-90c3-e31f7d117bd3 deleted by Aras
+2025-08-21 20:14:36.605 | INFO     | events.views:post:72 - Event 941ab376-c2dc-49d8-937c-a085d3773f50 created by Aras
+2025-08-21 20:14:36.700 | INFO     | tickets.views:post:36 - Ticket 5cc1e727-5df4-468b-8af0-6e0713e9a7c0 created by Aras
+2025-08-21 20:14:36.811 | INFO     | payments.views:post:141 - Registration 851a8d0e-0b0d-4b49-91ea-fa24118f50cf created by Aras
+2025-08-21 20:14:41.004 | INFO     | payments.views:post:149 - Reminder email sent to email_1755782068@gmail.com for registration 851a8d0e-0b0d-4b49-91ea-fa24118f50cf
+2025-08-21 20:14:41.118 | INFO     | payments.views:post:42 - Payment 5d6ece61-21fc-41c0-bc64-d8116b9e557b created by Aras
+2025-08-21 20:14:41.221 | INFO     | payments.views:get:26 - Admin Aras retrieved all payments
+2025-08-21 20:14:41.343 | INFO     | payments.views:get:64 - Payment 5d6ece61-21fc-41c0-bc64-d8116b9e557b retrieved from database
+2025-08-21 20:14:41.466 | INFO     | payments.views:put:96 - Payment 5d6ece61-21fc-41c0-bc64-d8116b9e557b updated by Aras
+2025-08-21 20:14:41.598 | INFO     | tickets.views:delete:93 - Ticket 5cc1e727-5df4-468b-8af0-6e0713e9a7c0 deleted by Aras
+2025-08-21 20:14:41.709 | INFO     | events.views:get:44 - Event list retrieved from database
+2025-08-21 20:14:43.374 | INFO     | events.views:post:72 - Event f7b9ff79-814e-4578-81aa-e1471a92286d created by eo_dicoding
+2025-08-21 20:14:43.485 | INFO     | events.views:post:72 - Event 47ff7967-8e27-4c5b-9931-09d05005491b created by other_organizer
+2025-08-21 20:14:43.594 | INFO     | events.views:put:127 - Event f7b9ff79-814e-4578-81aa-e1471a92286d updated by eo_dicoding
+2025-08-21 20:14:43.810 | INFO     | events.views:delete:138 - Event f7b9ff79-814e-4578-81aa-e1471a92286d deleted by eo_dicoding
+2025-08-21 20:15:51.646 | INFO     | events.views:post:171 - Poster d21881b2-06a7-4a57-b088-da85d18f2d73 uploaded by Aras
+2025-08-21 20:16:06.740 | INFO     | events.views:get:201 - Retrieved 1 poster(s) for event 941ab376-c2dc-49d8-937c-a085d3773f50 by dicoding_1755432461_1755432462_1755432561_1755432562_1755433108_1755445785_1755445786_1755446106_1755446107_1755446432_1755446434_1755570485_1755570486_1755575166_1755575168_1755755677_1755782067_1755782068

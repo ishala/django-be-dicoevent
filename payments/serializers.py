@@ -5,12 +5,14 @@ from core.models import User
 
 class RegistrationSerializer(serializers.ModelSerializer):
     _links = serializers.SerializerMethodField()
+    event_name = serializers.CharField(source='ticket_id.event_id.name', read_only=True)
     ticket = serializers.CharField(source='ticket_id.name', read_only=True)
     user = serializers.CharField(source='user_id.username', read_only=True)
+    user_email = serializers.CharField(source='user_id.email', read_only=True)
 
     class Meta:
         model = Registration
-        fields = ['id', 'ticket_id', 'user_id', 'ticket', 'user', '_links']
+        fields = ['id', 'ticket_id', 'user', 'user_id', 'user_email', 'ticket', 'event_name', '_links']
 
     def get__links(self, obj):
         request = self.context.get('request')

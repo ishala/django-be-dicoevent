@@ -9,6 +9,7 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 from core.permissions import IsAdminOrSuperUser
 from django.core.cache import cache
 import json
+from .tasks import send_ticket_reminder_email
 
 CACHE_KEY_PAYMENT_DETAIL = "payment_detail_{}"
 CACHE_KEY_REGIST_DETAIL = "regist_detail_{}"
@@ -117,7 +118,13 @@ class RegistrationListCreateView(APIView):
             reg_user = serializer.validated_data['user_id']
             if not IsAdminOrSuperUser().has_permission(request, self) and reg_user != request.user:
                 return Response({'error': 'Forbidden'}, status=status.HTTP_403_FORBIDDEN)
-            serializer.save()
+            registration = serializer.save()
+
+            send_ticket_reminder_email(
+                registration.user_id.email,          
+                registration.user_id.username,       
+                registration.ticket_id.event_id.name
+            )
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
